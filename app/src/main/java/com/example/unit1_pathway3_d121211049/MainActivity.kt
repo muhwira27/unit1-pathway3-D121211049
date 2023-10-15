@@ -45,4 +45,75 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun PersonalInfo (
+    name: String,
+    studentID: String,
+    instagramAcc: String,
+    phone: String,
+    email: String,
+    modifier: Modifier = Modifier
+){
+    Column (
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(horizontal = 22.dp)
+        ){
+            Image(
+                painter = painterResource(R.drawable.code),
+                contentDescription = "Code Image",
+                modifier
+                    .height(90.dp)
+                    .clip(RoundedCornerShape(10.dp)),
+                contentScale = ContentScale.Crop
+            )
+            Spacer(Modifier.height(16.dp))
+            Text(
+                text = name,
+                fontSize = 22.sp,
+            )
+            Text(
+                text = studentID,
+                fontSize = 18.sp,
+                textAlign = TextAlign.Center,
+            )
+        }
+
+        Spacer(Modifier.height(200.dp))
+
+        Column (
+            modifier.padding(bottom = 70.dp)
+        ) {
+            Row {
+                Image(painter = painterResource(R.drawable.wa),
+                    contentDescription = "WhatsApp Icon"
+                )
+                Spacer(Modifier.width(14.dp))
+                Text(text = phone)
+            }
+            Spacer(Modifier.height(16.dp))
+            Row {
+                Image(painter = painterResource(R.drawable.ig),
+                    contentDescription = "Instagram Icon"
+                )
+                Spacer(Modifier.width(15.dp))
+                Text(text = instagramAcc)
+            }
+            Spacer(Modifier.height(16.dp))
+            Row {
+                Image(painter = painterResource(R.drawable.gmail),
+                    contentDescription = "Gmail Icon"
+                )
+                Spacer(Modifier.width(17.dp))
+                Text(text = email)
+            }
+        }
+    }
+}
+
 
