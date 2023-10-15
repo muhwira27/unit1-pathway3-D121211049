@@ -116,4 +116,14 @@ fun PersonalInfo (
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun PersonalInfoPreview() {
+    PersonalInfo(name = "Muh. Wira Ramdhani Fadhil",
+        studentID = "D121211049",
+        instagramAcc = "@muhwira_27",
+        phone = "+6282394123456",
+        email = "muhwira907@gmail.com"
+    )
+}
 
